@@ -8,11 +8,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FlightRepository {
+
     private static FlightRepository flightRepository;
 
 
-    public static FlightRepository getInstance(){
-        if(flightRepository ==null){
+    public static FlightRepository getInstance() {
+        if (flightRepository == null) {
             flightRepository = new FlightRepository();
         }
         return flightRepository;
@@ -21,17 +22,17 @@ public class FlightRepository {
 
     private FlightApi flightApi;
 
-    public FlightRepository(){
+    public FlightRepository() {
         flightApi = RetrofitService.createService(FlightApi.class);
     }
 
-    public MutableLiveData<List<Flight>> getFlights(){
+    public MutableLiveData<List<Flight>> getFlights() {
 
         final MutableLiveData<List<Flight>> flightsData = new MutableLiveData<>();
         flightApi.getFlights().enqueue(new Callback<List<Flight>>() {
             @Override
             public void onResponse(Call<List<Flight>> call, Response<List<Flight>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     flightsData.setValue(response.body());
                 }
 

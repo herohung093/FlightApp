@@ -12,6 +12,7 @@ public class FlightDetailActivity extends AppCompatActivity {
     private TextView arrivalTimeTV, departureTimeTV, toCityTV, fromCityTV, toAirportTV, fromAirportTV, airFlightCodeTV;
     Intent intentReceiver;
     Flight flight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +31,20 @@ public class FlightDetailActivity extends AppCompatActivity {
 
         loadFlightDetailToView();
     }
-/**
- * bind data to view
- * */
-    public void loadFlightDetailToView(){
-        String convertedArrivalTime = DestructTime.getDate(flight.getArrivalDate()).substring(0,DestructTime.getDate(flight.getArrivalDate()).length()-1);
-        String convertedDepartureTime = DestructTime.getDate(flight.getDepartureDate()).substring(0,DestructTime.getDate(flight.getDepartureDate()).length()-1);
-        arrivalTimeTV.setText(convertedArrivalTime + "\n"+DestructTime.getTime(flight.getArrivalDate()));
-        departureTimeTV.setText(convertedDepartureTime + "\n"+DestructTime.getTime(flight.getDepartureDate()));
+
+    /**
+     * bind data to view
+     */
+    public void loadFlightDetailToView() {
+        String convertedArrivalTime = DestructTime.getDate(flight.getArrivalDate())
+            .substring(0, DestructTime.getDate(flight.getArrivalDate()).length() - 1);
+        String convertedDepartureTime = DestructTime.getDate(flight.getDepartureDate())
+            .substring(0, DestructTime.getDate(flight.getDepartureDate()).length() - 1);
+
+        arrivalTimeTV
+            .setText(convertedArrivalTime + "\n" + DestructTime.getTime(flight.getArrivalDate()));
+        departureTimeTV.setText(
+            convertedDepartureTime + "\n" + DestructTime.getTime(flight.getDepartureDate()));
         toCityTV.setText(flight.getArrivalCity().split(",")[0]);
         fromCityTV.setText(flight.getDepartureCity().split(",")[0]);
         toAirportTV.setText(flight.getArrivalAirport());
