@@ -2,7 +2,7 @@
 Simple Android App shows a list of flights, detail from sample API
 
 ## About this Project
-In this project I built a flight detail app using android architecture component (ViewModel), MVVM architecture with Retrofit 2 for pulling rest api remote source.
+In this project I built a flight detail app using android architecture component (ViewModel), LiveData, MVVM architecture with Retrofit 2 for pulling rest api remote source.
 
 ## Features
 * Show list of Flights
@@ -16,7 +16,7 @@ List of flights | Flight's Detail
 ## Library Used
 
 * Android Architecture Component
-* Mutabledata
+* LiveData
 * View Model
 * Retrofit 2
 * JUnit
