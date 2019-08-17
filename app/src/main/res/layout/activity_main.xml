@@ -22,6 +22,8 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:titleMarginStart="164.5dp"
+    app:titleMarginTop="17dp"
     app:titleTextColor="@android:color/white"/>
   <android.support.v7.widget.RecyclerView
     android:id="@+id/my_recycler_view"

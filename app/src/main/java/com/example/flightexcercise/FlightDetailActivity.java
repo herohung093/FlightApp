@@ -19,7 +19,7 @@ public class FlightDetailActivity extends AppCompatActivity {
 
         intentReceiver = getIntent();
         flight = (Flight) intentReceiver.getSerializableExtra("flight");
-        System.out.println(flight);
+
         arrivalTimeTV = findViewById(R.id.arrivalTimeTV);
         departureTimeTV = findViewById(R.id.departureTimeTV);
         toCityTV = findViewById(R.id.toCityTV);
@@ -27,12 +27,17 @@ public class FlightDetailActivity extends AppCompatActivity {
         toAirportTV = findViewById(R.id.toAirportTV);
         fromAirportTV = findViewById(R.id.fromAirportTV);
         airFlightCodeTV = findViewById(R.id.airFlightCodeTV);
+
         loadFlightDetailToView();
     }
-
+/**
+ * bind data to view
+ * */
     public void loadFlightDetailToView(){
-        arrivalTimeTV.setText(DestructTime.getDate(flight.getArrivalDate()) +"\n"+DestructTime.getTime(flight.getArrivalDate()));
-        departureTimeTV.setText(DestructTime.getDate(flight.getDepartureDate())+"\n"+DestructTime.getTime(flight.getDepartureDate()));
+        String convertedArrivalTime = DestructTime.getDate(flight.getArrivalDate()).substring(0,DestructTime.getDate(flight.getArrivalDate()).length()-1);
+        String convertedDepartureTime = DestructTime.getDate(flight.getDepartureDate()).substring(0,DestructTime.getDate(flight.getDepartureDate()).length()-1);
+        arrivalTimeTV.setText(convertedArrivalTime + "\n"+DestructTime.getTime(flight.getArrivalDate()));
+        departureTimeTV.setText(convertedDepartureTime + "\n"+DestructTime.getTime(flight.getDepartureDate()));
         toCityTV.setText(flight.getArrivalCity().split(",")[0]);
         fromCityTV.setText(flight.getDepartureCity().split(",")[0]);
         toAirportTV.setText(flight.getArrivalAirport());

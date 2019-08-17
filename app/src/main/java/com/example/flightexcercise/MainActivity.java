@@ -17,6 +17,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
+    /**
+     * to stores flight detail from the API
+     * */
     List<Flight> flightsList= new ArrayList<>();
     FlightsViewModel flightsViewModel;
     RecyclerView recyclerView;
@@ -34,10 +37,10 @@ public class MainActivity extends AppCompatActivity  {
             mAdapter.notifyDataSetChanged();
 
         });
+
         /**
          * setup ToolBar
          */
-
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         myToolbar.setTitle("Trips");
         setSupportActionBar(myToolbar);
@@ -52,11 +55,14 @@ public class MainActivity extends AppCompatActivity  {
         recyclerView.setLayoutManager(layoutManager);
 
         mAdapter = new FlightCardAdapter(this, flightsList, new OnItemClickListener() {
+            /**
+             * moving to new activity with a flight detail
+             * */
             @Override
             public void onItemClick(Flight item, Context context) {
                 Intent moveToFlightDetail = new Intent(context, FlightDetailActivity.class);
                 moveToFlightDetail.putExtra("flight", item);
-               context.startActivity(moveToFlightDetail);
+                context.startActivity(moveToFlightDetail);
 
             }
 

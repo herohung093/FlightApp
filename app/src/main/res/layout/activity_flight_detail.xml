@@ -8,6 +8,24 @@
   android:layout_height="match_parent"
   android:background="#fafafa"
   tools:context=".FlightDetailActivity">
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/my_toolbar"
+    style="@style/HeaderBar"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="#d40119"
+    android:elevation="4dp"
+    android:gravity="center"
+    android:textAlignment="center"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:title="Trips"
+    app:titleMarginStart="164.5dp"
+    app:titleMarginTop="17dp"
+    app:titleTextColor="@android:color/white"/>
   <android.support.v7.widget.CardView
     android:id="@+id/flightDetailContainer"
     android:layout_width="345dp"

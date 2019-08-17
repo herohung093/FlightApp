@@ -6,7 +6,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitService {
-
+/**
+ * url is divided into small strings, the reason is the original base url contains "?" which lead to an exception
+ * */
     private static String url="https://firebasestorage.googleapis.com/v0/b/flight-centre-brand.appspot.com/o/";
 
 

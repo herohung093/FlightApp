@@ -12,11 +12,23 @@ import android.widget.TextView;
 import com.example.flightexcercise.R;
 import com.example.flightexcercise.model.Flight;
 import java.util.List;
-
+/**
+ * Adapter for Recycle list of flight objects
+ * */
 public class FlightCardAdapter extends RecyclerView.Adapter<FlightCardAdapter.ViewHolder>{
+    /**
+     * Parent activity context
+     * */
     private Context context;
+    /**
+     * list of flight objects
+     * */
     private List<Flight> flightsList;
+    /***
+     * onItemListener for each item
+     */
     private final OnItemClickListener listener;
+
     public FlightCardAdapter(Context context,
         List<Flight> flightsList, OnItemClickListener listener) {
         this.context = context;
@@ -50,10 +62,6 @@ public class FlightCardAdapter extends RecyclerView.Adapter<FlightCardAdapter.Vi
     @Override
     public int getItemCount() {
         return flightsList.size();
-    }
-    public void setFlightsList(List<Flight> flightsList){
-        this.flightsList = flightsList;
-        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
