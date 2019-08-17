@@ -11,7 +11,7 @@ In this project I built a flight detail app using android architecture component
 ## Screenshot
 List of flights | Flight's Detail
 ------------ | -------------
-![List of flights](https://user-images.githubusercontent.com/25211163/63210449-afe3a200-c131-11e9-91b2-43974f84dea1.jpg)| ![Flight's Detail](https://user-images.githubusercontent.com/25211163/63210459-d9043280-c131-11e9-83c9-51141e46c409.jpg)
+![List of flights](https://user-images.githubusercontent.com/25211163/63218396-2964aa00-c19d-11e9-9db0-94d3e748d5c9.jpg)| ![Flight's Detail](https://user-images.githubusercontent.com/25211163/63218398-2d90c780-c19d-11e9-8ec7-36e461fd9328.jpg)
 
 ## Library Used
 
